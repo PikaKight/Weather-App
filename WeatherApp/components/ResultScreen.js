@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { SafeAreaView, StyleSheet, Text, FlatList, ScrollView} from 'react-native';
 import ResultCard from './ResultCard';
 
 
-
-
-
 function ResultScreen(props) {
+
+    const [res, setResults] = useState([]);
+
+    useEffect(() => {
+        fetch
+    })
+
     return (
         <SafeAreaView style={styles.content}>
             <ScrollView 
