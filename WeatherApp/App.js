@@ -24,22 +24,19 @@ export default function App() {
       <TextInput
         style={styles.input}
         onChangeText={onCity}
-        value={city}
         placeholder="City"
       />
 
-      <Text style={styles.formHeading}>Please Enter City</Text>
+      <Text style={styles.formHeading}>Please Enter Country</Text>
       <TextInput
         style={styles.input}
         onChangeText={onCountry}
-        value={country}
-        placeholder="City"
+        placeholder="Country"
       />
       <Text style={styles.formHeading}>Please Enter Zip Code</Text>
       <TextInput
         style={styles.input}
         onChangeText={onZip}
-        value={zip}
         placeholder="Zip"
       />
 

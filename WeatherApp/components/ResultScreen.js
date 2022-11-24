@@ -11,10 +11,13 @@ function ResultScreen(props) {
         fetch('/city', {
             body: {
                 city: props.city,
-                county: props.county
-            }
-        })
-    })
+                country: props.country
+                }
+            })
+            .then((data) => {
+                setResults(data)
+            })
+    }, [])
 
     return (
         <SafeAreaView style={styles.content}>
@@ -22,7 +25,20 @@ function ResultScreen(props) {
                 contentContainerStyle={styles.scroll}
                 horizontal={true}
             >
-                {}
+                {res.map((result) => {
+                    <ResultCard
+                        day = {1}
+                        weather = "Clear"
+                        currentTemp = {-2}
+                        minTemp = {-2}
+                        maxTemp = {11}
+                        windSpeed = "6 km/h"
+                        precipitation = "3%"
+                        humidity = "100%"
+                    />
+                    })
+                }
+                
             </ScrollView>
         </SafeAreaView>
     );
