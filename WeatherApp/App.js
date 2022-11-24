@@ -1,13 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, SafeAreaView, TextInput, Button, Pressable} from 'react-native';
+import { StyleSheet, Text, SafeAreaView, TextInput, Button} from 'react-native';
+import ResultScreen from './components/ResultScreen';
 
 export default function App() {
 
   const [city, onCity] = React.useState("");
   const [zip, onZip] = React.useState("");
-  const [value, onSubmit] = React.useState("");
-
+  const [value, onReset] = React.useState("");
 
   return (
     <SafeAreaView style={styles.container}>
@@ -17,7 +17,7 @@ export default function App() {
       animated={true}
       />
 
-      <Text style={styles.heading}>Hello World!</Text>
+      <Text style={styles.heading}>Weather App</Text>
 
       <Text style={styles.formHeading}>Please Enter City</Text>
       <TextInput
@@ -36,18 +36,18 @@ export default function App() {
       />
 
       <Button 
-        title='Submit'
+        title='Reset'
         color="#7376FF"
-        onPress={onSubmit}
+        onPress={onReset}
       />
-    
+
+      <ResultScreen/>
    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    
     flex: 1,
     backgroundColor: '#66BAFF',
     alignItems: 'center',
@@ -70,13 +70,5 @@ const styles = StyleSheet.create({
     borderColor: '#fff',
     textAlign: 'center',
     justifyContent: 'center'
-  },
-  submit: {
-    backgroundColor: '#7376FF',
-    color: '#fff',
-    borderRadius: 5,
-    borderWidth: 1,
-    marginTop: 20,
-    padding: '2%',
   }
 });
