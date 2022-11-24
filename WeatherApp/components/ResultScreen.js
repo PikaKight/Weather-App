@@ -8,7 +8,12 @@ function ResultScreen(props) {
     const [res, setResults] = useState([]);
 
     useEffect(() => {
-        fetch
+        fetch('/city', {
+            body: {
+                city: props.city,
+                county: props.county
+            }
+        })
     })
 
     return (
@@ -17,26 +22,7 @@ function ResultScreen(props) {
                 contentContainerStyle={styles.scroll}
                 horizontal={true}
             >
-                <ResultCard
-                    day = {1}
-                    weather = "Clear"
-                    currentTemp = {-2}
-                    minTemp = {-2}
-                    maxTemp = {11}
-                    windSpeed = "6 km/h"
-                    precipitation = "3%"
-                    humidity = "100%"
-                />
-                <ResultCard
-                    day = {2}
-                    weather = "Clear"
-                    currentTemp = {-2}
-                    minTemp = {-2}
-                    maxTemp = {11}
-                    windSpeed = "6 km/h"
-                    precipitation = "3%"
-                    humidity = "100%"
-                />
+                {}
             </ScrollView>
         </SafeAreaView>
     );

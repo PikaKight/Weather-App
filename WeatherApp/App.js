@@ -6,6 +6,7 @@ import ResultScreen from './components/ResultScreen';
 export default function App() {
 
   const [city, onCity] = React.useState("");
+  const [country, onCountry] = React.useState("");
   const [zip, onZip] = React.useState("");
   const [value, onReset] = React.useState("");
 
@@ -27,6 +28,13 @@ export default function App() {
         placeholder="City"
       />
 
+      <Text style={styles.formHeading}>Please Enter City</Text>
+      <TextInput
+        style={styles.input}
+        onChangeText={onCountry}
+        value={country}
+        placeholder="City"
+      />
       <Text style={styles.formHeading}>Please Enter Zip Code</Text>
       <TextInput
         style={styles.input}
