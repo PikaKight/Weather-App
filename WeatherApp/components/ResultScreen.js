@@ -25,16 +25,17 @@ function ResultScreen(props) {
                 contentContainerStyle={styles.scroll}
                 horizontal={true}
             >
-                {res.map((result) => {
+                {
+                    res.map((result) => {
                     <ResultCard
-                        day = {1}
-                        weather = "Clear"
-                        currentTemp = {-2}
-                        minTemp = {-2}
-                        maxTemp = {11}
-                        windSpeed = "6 km/h"
-                        precipitation = "3%"
-                        humidity = "100%"
+                        day = {result.day}
+                        weather = {result.weather}
+                        currentTemp = {result.currentTemp}
+                        minTemp = {result.minTemp}
+                        maxTemp = {result.maxTemp}
+                        windSpeed = {result.windSpeed}
+                        precipitation = {result.precipitation}
+                        humidity = {result.humidity}
                     />
                     })
                 }

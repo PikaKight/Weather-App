@@ -5,10 +5,10 @@ import ResultScreen from './components/ResultScreen';
 
 export default function App() {
 
-  const [city, onCity] = React.useState("");
-  const [country, onCountry] = React.useState("");
-  const [zip, onZip] = React.useState("");
-  const [value, onReset] = React.useState("");
+  const [city, onCity] = React.useState();
+  const [country, onCountry] = React.useState();
+  const [zip, onZip] = React.useState();
+  const [value, onReset] = React.useState();
 
   return (
     <SafeAreaView style={styles.container}>
@@ -46,7 +46,10 @@ export default function App() {
         onPress={onReset}
       />
 
-      <ResultScreen/>
+      <ResultScreen
+        city={city}
+        country={country}
+      />
    </SafeAreaView>
   );
 }

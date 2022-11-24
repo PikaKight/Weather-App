@@ -26,6 +26,7 @@ app.get('/city', async (req, res) => {
             humidity
         };
 
+        refinedData['day'] = i+1;
         refinedData['weather'] = data.list[i]["weather"][0]["description"]
         refinedData['currentTemp'] = data.list[i]["temp"]["day"]
         refinedData['minTemp'] = data.list[i]["temp"]["min"]
